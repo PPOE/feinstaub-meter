@@ -3,6 +3,31 @@
 
   $(function () {
 
+    $('button').on('click', function (event) {
+      if ($('article').hasClass('show')) {
+        $('article').removeClass('show');
+      } else {
+        $('article').addClass('show');
+      }
+    });
+
+    $('article .close').on('click', function() {
+      $('article').removeClass('show');
+    });
+
+    $('html, body, .content, .headline, div, svg').on('click', function(event) {
+      if (event.target !== this) {
+        return;
+      }
+      $('article').removeClass('show');
+    });
+
+    $(document).keyup(function(event) {
+      if (event.keyCode === 27) { // esc
+        $('article').removeClass('show');
+      }
+    });
+
     var particleValue = 0;
 
     var url = 'https://kamerascheu.at/feinstaub-meter/index.php';
