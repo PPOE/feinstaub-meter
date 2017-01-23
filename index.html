@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="background">
+        <div class="content container-fluid">
+            <br />
+            <h1 class="pirate-highlight">Ist heute ein Feinstaub Tag?</h1><br />
+
+            <svg id="meter" width="500" height="500">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:lightgrey;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:darkslategrey;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grad2" x1="100%" y1="100%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:lightgrey;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:darkslategrey;stop-opacity:1" />
+                    </linearGradient>
+                    <radialGradient id="grad3" cx="50%" cy="50%" r="90%" fx="50%" fy="50%">
+                        <stop offset="0%" style="stop-color:white;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:lightgrey;stop-opacity:1" />
+                    </radialGradient>
+                    <linearGradient id="grad4" x1="100%" y1="0%" x2="0%" y2="0%">
+                        <stop offset="0%" style="stop-color:green;stop-opacity:0" />
+                        <stop offset="25%" style="stop-color:green;stop-opacity:0" />
+                        <stop offset="100%" style="stop-color:green;stop-opacity:1" />
+                    </linearGradient>
+                    <linearGradient id="grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:red;stop-opacity:0" />
+                        <stop offset="5%" style="stop-color:red;stop-opacity:0" />
+                        <stop offset="20%" style="stop-color:red;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:red;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <circle cx="250" cy="250" r="200" fill="url(#grad1)" />
+                <circle cx="250" cy="250" r="190" fill="url(#grad2)" />
+                <circle cx="250" cy="250" r="175" stroke="black" stroke-width="10" />
+                <circle cx="250" cy="250" r="177" fill="url(#grad3)" />
+
+                <path d="M 90,250 A 20,20 0 1 1 410,250" stroke-width="20" stroke="url(#grad4)" fill="none" style="transform-origin:250px 250px;transform:rotate(-45deg)" />
+                <path d="M 90,250 A 20,20 0 1 1 410,250" stroke-width="20" stroke="url(#grad5)" fill="none" style="transform-origin:250px 250px;transform:rotate(45deg)" />
+
+                <line x1="80" y1="250" x2="110" y2="250" stroke="black" stroke-width="6" />
+                <text x="135" y="260" text-anchor="middle" font-size="30">20</text>
+                <line x1="250" y1="80" x2="250" y2="110" stroke="black" stroke-width="6" />
+                <text x="250" y="135" text-anchor="middle" font-size="30">60</text>
+                <line x1="420" y1="250" x2="380" y2="250" stroke="black" stroke-width="6" />
+                <text x="350" y="260" text-anchor="middle" font-size="30">100</text>
+
+                <line x1="158" y1="342" x2="130" y2="370" stroke="black" stroke-width="6" />
+                <text x="175" y="335" text-anchor="middle" font-size="30">0</text>
+                <line x1="158" y1="158" x2="130" y2="130" stroke="black" stroke-width="6" />
+                <text x="175" y="180" text-anchor="middle" font-size="30">40</text>
+                <line x1="342" y1="158" x2="370" y2="130" stroke="black" stroke-width="6" />
+                <text x="320" y="180" text-anchor="middle" font-size="30">80</text>
+                <line x1="342" y1="342" x2="370" y2="370" stroke="black" stroke-width="6" />
+                <text x="320" y="335" text-anchor="middle" font-size="30">120</text>
+
+                <text x="250" y="365" text-anchor="middle" font-size="16" font-family="Arial">PM10 [µg/m³]</text>
+                <text x="250" y="385" text-anchor="middle" font-size="16" font-family="Arial">Feinstaub</text>
+
+                <line x1="196" y1="121" x2="185" y2="93" stroke="black" stroke-width="3" />
+                <line x1="304" y1="121" x2="315" y2="93" stroke="black" stroke-width="3" />
+                <line x1="121" y1="304" x2="93" y2="315" stroke="black" stroke-width="3" />
+                <line x1="121" y1="196" x2="93" y2="185" stroke="black" stroke-width="3" />
+                <line x1="379" y1="304" x2="407" y2="315" stroke="black" stroke-width="3" />
+                <line x1="379" y1="196" x2="407" y2="185" stroke="black" stroke-width="3" />
+
+                <polygon id="pointer" points="130,370 250,240 260,240 260,250" fill="black" style="transition: all 0.5s;transform-origin:250px 250px" />
+            </svg>
+
+            <footer>
+                <div class="col-lg-3 text-xs-left">
+                    <p>
+                        <a class="share-btn facebook"
+                           href="https://www.facebook.com/sharer/sharer.php?u=http%3A//murkraftwerk.fail/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a class="share-btn twitter"
+                           href="https://twitter.com/home?status=Bist%20du%20f%C3%BCr%20das%20%23Murkraftwerk?%20http%3A//murkraftwerk.fail/%20%23GrazWahl17"
+                           target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a class="share-btn google-plus" href="https://plus.google.com/share?url=http%3A//murkraftwerk.fail/"
+                           target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a class="share-btn facebook-messenger" href="fb-messenger://share/?link=http%3A%2F%2Fmurkraftwerk.fail%2F">
+                            <i class="fa fa-comment"></i>
+                        </a>
+                        <a class="share-btn telegram" href="https://telegram.me/share/url?url=http%3A//murkraftwerk.fail/&text=Schon%20gesehen%3F%20"
+                           target="_blank">
+                            <i class="fa fa-telegram"></i>
+                        </a>
+                        <a class="share-btn whatsapp" href="whatsapp://send?text=Schon%20gesehen%3F%20http%3A%2F%2Fmurkraftwerk.fail%2F"
+                           data-action="share/whatsapp/share"
+                           target="_blank">
+                            <i class="fa fa-whatsapp"></i>
+                        </a>
+                    </p>
+                </div>
+                <div class="col-lg-9 text-xs-right">
+                    <p>
+                        Textvorschläge gerne per
+                        <a href="mailto:lv-stmk@piratenpartei.at">Mail</a> oder
+                        <a href="https://github.com/PPOE/murkraftwerk.fail">GitHub</a><br/>
+                        <a href="//creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>
+                        &copy;
+                        <a href="//piraten-graz.at/rechtliches/impressum/">Piratenpartei Graz</a> 2017 -
+                        <a href="//www.facebook.com/piratengraz">Facebook</a> -
+                        <a href="//twitter.com/PiratenGraz">Twitter</a>
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+        <script src="js/jquery-3.1.1.min.js"></script>
+        <script src="js/tether.min.js" ></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/script.js"></script>
+    </body>
+</html>
