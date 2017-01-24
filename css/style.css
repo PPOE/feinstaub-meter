@@ -102,6 +102,7 @@ article {
     padding: 3px 12px;
     transform: translateX(-50%) rotate(1deg);
     transition: top 0.4s;
+    z-index: 30;
 }
 
 article.show {
