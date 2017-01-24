@@ -51,7 +51,13 @@
       //$pointer.attr('transform', 'rotate(45 250 250)');
       //$pointer.css('transform', 'rotate(45deg)');
 
-      particleValue = particleValue > 140 ? 140 : particleValue;
+      $('#meter #number').text(Math.round(particleValue));
+      if (particleValue > 120) {
+        $('#meter #pointer').attr('fill', 'red');
+      }
+      if (particleValue > 140) {
+        particleValue = 140;
+      }
 
       var position = degrees(((particleValue) / 80) * Math.PI);
 
