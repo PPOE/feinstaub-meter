@@ -51,7 +51,7 @@
       //$pointer.attr('transform', 'rotate(45 250 250)');
       //$pointer.css('transform', 'rotate(45deg)');
 
-      particleValue %= 120;
+      particleValue = particleValue > 140 ? 140 : particleValue;
 
       var position = degrees(((particleValue) / 80) * Math.PI);
 
