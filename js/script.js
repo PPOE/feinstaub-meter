@@ -15,7 +15,8 @@
       }
     });
 
-    $('article .close').on('click', function() {
+    $('article .close').on('click', function(event) {
+      event.preventDefault();
       $('article').removeClass('show');
     });
 
