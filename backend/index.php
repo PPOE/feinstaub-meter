@@ -40,6 +40,6 @@ $result = ['value' => $value];
 
 $json = json_encode($result);
 
-file_put_contents('cache.json', $json);
+file_put_contents($cacheFile, $json);
 
 echo $json;
