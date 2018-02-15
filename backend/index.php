@@ -12,8 +12,8 @@ $yesterday = new DateTime();
 $yesterday->add(DateInterval::createFromDateString('yesterday'));
 
 if (file_exists($cacheFile)) {
-    $cachDate = (new DateTime())->setTimestamp(filemtime($cacheFile));
-    if ($today->diff($cachDate)->days === 0) {
+    $cacheDate = (new DateTime())->setTimestamp(filemtime($cacheFile));
+    if ($today->diff($cacheDate)->days === 0) {
         echo file_get_contents($cacheFile);
         exit;
     }
