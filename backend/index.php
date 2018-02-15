@@ -32,6 +32,7 @@ curl_close($ch);
 
 $dom = new DOMDocument();
 $dom->loadHTML($html);
+libxml_use_internal_errors($internalErrors);
 
 $xpath = new DOMXPath($dom);
 $value = $xpath->query('//table[1]//table[3]//tr[4]//td[2]/text()')->item(0)->nodeValue;
