@@ -35,7 +35,7 @@
 
     var particleValue = 0;
 
-    var url = 'https://kamerascheu.at/feinstaub-meter/index.php';
+    var url = 'https://feinstaub-meter.petergrassberger.at/index.php';
     $.get(url, function (data) {
       particleValue = data.value;
       startAnimation();
